@@ -21,15 +21,18 @@ Active Directory is the identity backbone of every Windows enterprise environmen
 <p align="center">
 
 Create an Account  <br/>
-<img src="https://imgur.com/a/aqz5qC8" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="<img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/88c56be1-585d-46cc-9366-83978514df99" />
+" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
 Enter the number of passes: <br/>
-<img src="https://i.imgur.com/nCIbXbg.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img <img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/313ff4ac-d9b8-4fcc-9eca-e9ee99fd6728" />
+
 <br />
 <br />
 Confirm your selection:  <br/>
-<img src="https://i.imgur.com/cdFHBiU.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="<img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/30458775-432c-47db-8a38-c92c7b50e4c3" />
+" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
 Wait for process to complete (may take some time):  <br/>
