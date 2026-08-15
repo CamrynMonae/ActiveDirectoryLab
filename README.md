@@ -20,18 +20,19 @@ Active Directory is the identity backbone of every Windows enterprise environmen
 
 <p align="center">
 
-Create an Account  <br/>
-<img src="<img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/88c56be1-585d-46cc-9366-83978514df99" />
-" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+Create an Account on Azure and make a Virtual Machine. After creating a name for your VM you would set your zone, region, and image. <br/>
+<img width="1440" height="900" alt="Screenshot 2026-08-14 at 12 04 33 PM" src="https://github.com/user-attachments/assets/17e2aa30-45bb-4058-946a-2138bb9143bf" />
+
+
 <br />
 <br />
-Enter the number of passes: <br/>
-<img <img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/313ff4ac-d9b8-4fcc-9eca-e9ee99fd6728" />
+Select a size and Create a username and password for the VM <br/>
+<img  />
 
 <br />
 <br />
 Confirm your selection:  <br/>
-<img src="<img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/30458775-432c-47db-8a38-c92c7b50e4c3" />
+<img src=" vwidth="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/30458775-432c-47db-8a38-c92c7b50e4c3" />
 " height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
