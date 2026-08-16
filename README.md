@@ -1,14 +1,14 @@
 <h1>Active Directory Home Lab</h1>
 
 <h2>Description</h2>
-Active Directory is the identity backbone of every Windows enterprise environment. In this lab you will build one from scratch — standing up a domain controller, structuring departments as Organizational Units, creating users and security groups, and enforcing security policies across every machine in the domain.
+Active Directory is the identity backbone of every Windows enterprise environment. In this lab I will build one from scratch — setting up a domain controller, structuring departments as Organizational Units, creating users and security groups, and enforcing security policies across every machine in the domain.
 <br />
-
 
 <h2>Languages and Utilities Used</h2>
 
 - <b>PowerShell</b> 
 - <b>Server Manager</b>
+- <b>Azure</b>
 
 <h2>Environments Used </h2>
 
@@ -74,6 +74,93 @@ Click on the white page like symbol in the top left corner that says new script.
 Minimize powershell and click the flag with the caution symbol and select promote this server to a domain controller
 
 <img width="796" height="306" alt="image" src="https://github.com/user-attachments/assets/ab61f51e-73d7-4478-93be-a3f04bd19aa1" />
+
+Select Add a new forest and for the root domain name insert Lab.local and select next. Create a password ( disater recovery, etc) and click next until you are able to click install
+<br />
+<br />
+<img width="1816" height="1156" alt="image" src="https://github.com/user-attachments/assets/11fcceb6-8680-41cb-9e83-dae775c7a5b1" />
+
+
+Open Active Users users and computers. Right click the domain (lab.local) hover over new and select Organizational Unit and name it. (Manual way)
+
+<img width="1644" height="1110" alt="image" src="https://github.com/user-attachments/assets/d337cfff-714b-48d1-8120-342708d33390" />
+<br />
+<br />
+
+(Scripted way) Open powershell and insert the script and  press the green play button to add multiple OU as once.
+<br />
+<br />
+
+<img width="1610" height="628" alt="image" src="https://github.com/user-attachments/assets/6817e8b7-4671-410c-be63-d7e28615e3a5" />
+<br />
+<br />
+
+To do a security Group right click the domain, hover over new, and select group and give a name.( Manually)
+
+<img width="1428" height="1036" alt="image" src="https://github.com/user-attachments/assets/4ceb383e-ad8d-4d1f-ab5e-fd726d2c09e4" />
+<br />
+<br />
+
+(Scripted) Insert the script and press the green play button. To add multiple Security Groups at once
+
+<img width="1976" height="1076" alt="image" src="https://github.com/user-attachments/assets/b76d0f5e-2b82-43c0-991c-26975225941e" />
+<br />
+<br />
+
+Click on user, right click a white empty space, hover over new and select user. Create a user name and password for the user and select next
+
+<img width="865" height="574" alt="Screenshot 2026-08-16 at 12 15 39 PM" src="https://github.com/user-attachments/assets/e2f7d362-6cd0-4ebd-8ddc-351a1e6ef7c7" />
+
+<img width="898" height="766" alt="image" src="https://github.com/user-attachments/assets/9eb5f4dc-f672-42e4-a208-811253a1ddc9" />
+<br />
+<br />
+(Scripted) Insert the script, and it will create A password for everyone, Four users including their first name, surname, account name, Principal name. Also, for the four users they are being added to their department / group. 
+
+<img width="1994" height="1290" alt="image" src="https://github.com/user-attachments/assets/e766682a-0c19-4502-ba90-e8ba89695035" />
+
+
+Step #5 Group Policy 
+Open Server Manager, Hover over tools, and select Group Policy Management. Click on forest and then domain.
+<img width="2242" height="1142" alt="image" src="https://github.com/user-attachments/assets/7c2d1a67-afa2-447a-b946-39650f1a52f2" />
+
+Drop down domain, lab.local, and right click IT and select Create a GPO in this domain, and link it here. and name it. 
+<img width="1004" height="538" alt="image" src="https://github.com/user-attachments/assets/9dfc3ecc-08c0-490c-8dda-f4d26c42bd79" />
+
+Go through the drop downs and right click the one you named and select edit
+<img width="750" height="538" alt="image" src="https://github.com/user-attachments/assets/71b0e79d-2d31-417e-a60f-6ecb571da541" />
+
+Drop down Computer configuration, Policies, Windows Settings, Security Settings, Account policies, Click on password policy and right click minimum password length and select properties then, check the define this policy setting and set the characters to 12 and then apply
+
+<img width="1552" height="602" alt="image" src="https://github.com/user-attachments/assets/80c780d2-0ffb-4794-b44a-3b2676037e71" />
+
+For Password Complexity, Select the same drop downs and right click on Password must meet complexity requirements. Select Properties and check the define this policy setting box then click enable and ok.
+<img width="1566" height="548" alt="image" src="https://github.com/user-attachments/assets/ce73201f-0060-4330-86c5-2ce18d4c74f0" />
+
+For Machine inactivity. Do the drops downs of Computer configuration, Policies, Windows Settings, Security Settings, Local polices, then select Security Options. Right click Interactive logon, machine inactivity limit. select properties, check the define this policy setting box and set to 900 seconds ( 15 minutes)
+<img width="1974" height="522" alt="image" src="https://github.com/user-attachments/assets/77d96e78-e1de-4ed5-b7c7-5fcecc9c364e" />
+
+Removable storage, Drop down computer configuration, policies, Administrative Templates: Policy definition, Systems, Click on Removable Storage Access, right click all removable storage classes: Deny all access, select edit, Enable and apply then ok.
+<img width="2786" height="1378" alt="image" src="https://github.com/user-attachments/assets/9f98aa7a-9269-4f10-b04a-6c0db4bb1606" />
+
+Step 6 
+Reset Passwords: Open Active Directory, click on the HR file, and right click on user( Carol) and reset password and unlock account.
+<img width="1216" height="506" alt="image" src="https://github.com/user-attachments/assets/2b8cd5dd-26ee-44ad-be40-92c6c8d5d6c4" />
+<img width="882" height="578" alt="image" src="https://github.com/user-attachments/assets/f266caa7-16cc-4c84-ac23-3b30cb40b8fd" />
+<img width="1350" height="884" alt="image" src="https://github.com/user-attachments/assets/dc55933f-1045-4cf0-99ef-46ed29e240b7" />
+
+
+(Scripted) Unlock account / rest password / Disable user: Inserter the scripts in powershell
+<img width="1480" height="1018" alt="image" src="https://github.com/user-attachments/assets/cf0d9b3b-f050-40b2-8038-e52a07e8e426" />
+<img width="1384" height="894" alt="image" src="https://github.com/user-attachments/assets/2226e0c9-ffec-44aa-afa5-0bd0e849c70a" />
+
+Manually Disable user account: Right click user account and select disable. 
+<img width="1078" height="524" alt="image" src="https://github.com/user-attachments/assets/1267288f-ff75-4463-9820-8a644ad85e0a" />
+
+Auditing and reporting script to check to see who has been inactive
+<img width="2030" height="1370" alt="image" src="https://github.com/user-attachments/assets/bb7063a4-95ec-4531-8fbc-51928cbcbd9f" />
+
+
+
 
 
 <!--<br />
